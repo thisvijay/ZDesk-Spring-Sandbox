@@ -4,10 +4,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class YesiamvjExtensionApplication {
+public class APPRoot {
 
 	public static void main(String[] args) {
-		SpringApplication.run(YesiamvjExtensionApplication.class, args);
+		SpringApplication.run(APPRoot.class, args);
 	}
 
 }

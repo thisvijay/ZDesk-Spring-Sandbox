@@ -14,9 +14,9 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @EnableAutoConfiguration
-public class SetUserOrgInfo {
+public class NewAPPInstallationHandler {
 	
-	private static final Logger LOGGER = LoggerFactory.getLogger(SetUserOrgInfo.class);
+	private static final Logger LOGGER = LoggerFactory.getLogger(NewAPPInstallationHandler.class);
 
     @RequestMapping(value = "/github/initializeIntegration", method= RequestMethod.POST)
     public ResponseEntity<String>  process(@RequestBody String payload) {
