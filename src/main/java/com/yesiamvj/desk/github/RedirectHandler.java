@@ -1,5 +1,5 @@
 //$Id$
-package com.vijay.desk.yesiamvjextension;
+package com.yesiamvj.desk.github;
 
 import java.net.URI;
 import java.net.URISyntaxException;

@@ -1,5 +1,5 @@
 //$Id$
-package com.vijay.desk.yesiamvjextension;
+package com.yesiamvj.desk.github;
 
 import java.io.BufferedReader;
 import java.io.DataOutputStream;

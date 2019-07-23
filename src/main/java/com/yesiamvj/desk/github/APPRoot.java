@@ -1,4 +1,4 @@
-package com.vijay.desk.yesiamvjextension;
+package com.yesiamvj.desk.github;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
