@@ -1,5 +1,5 @@
 //$Id$
-package com.yesiamvj.desk.github;
+package com.yesiamvj.desk;
 
 import org.json.JSONException;
 import org.json.JSONObject;
