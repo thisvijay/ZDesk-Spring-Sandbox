@@ -21,7 +21,7 @@ public class NewAPPInstallationHandlerYoutube {
 	
 	private static final Logger LOGGER = LoggerFactory.getLogger(NewAPPInstallationHandlerYoutube.class);
 
-    @RequestMapping(value = "/github/initializeIntegration", method= RequestMethod.POST)
+    @RequestMapping(value = "/youtube/initializeIntegration", method= RequestMethod.POST)
     public ResponseEntity<String>  process(@RequestBody String payload) {
     	try {
     		
