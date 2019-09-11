@@ -105,7 +105,7 @@ function removeElem(id){
     $(id).slideUp();
 }
 function subscribe(repo_name){
-    var subscribe_url = "https://c930ce04.ngrok.io/github/githubCommentListener?appOrgId="+appCredentials.deskOrgId+"&appSecurityContext="+appCredentials.deskSecurityContext;
+    var subscribe_url = "https://yesiamvj-desk.zcodeusers.com/github/githubCommentListener?appOrgId="+appCredentials.deskOrgId+"&appSecurityContext="+appCredentials.deskSecurityContext;
     var reqObj = {
                url : `https://api.github.com/repos/${repo_name}/hooks`,
                connectionLinkName : "my_githubcon",

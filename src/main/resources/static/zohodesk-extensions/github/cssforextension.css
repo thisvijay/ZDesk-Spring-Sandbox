@@ -1,17 +1,157 @@
-.cich-io-cd-itm{
-	margin-bottom: 10px;
-	padding: 5px;
+body{
+  font-family: sans-serif;
+  font-size: 14px;
 }
-.cich-iocd-q{
-	font-weight: bold;
-	color: grey;
-	padding:2px 5px;
+.repos-container{
+  padding:0px 15px;
 }
-.cich-iocd-ans{
-	padding: 5px 10px;
-	padding-left: 15px;
-        line-height: 1.3;
+h2{
+  padding:0px 10px 10px;
+  border-bottom: 1px solid silver;
+  color: grey;
 }
-.cich-io-cd-ttl .cich-win-act-item{
-	float: right;
+button{
+  border:  1px solid white;
+  color: white;
+  padding: 3px 10px 5px;
+  font-size: 13px;
+  border-radius: 5px;
+}
+button:hover{
+  cursor: pointer;
+}
+table{
+  border: 1px solid whitesmoke;
+}
+th{
+  background-color: whitesmoke;
+  padding: 10px 15px;
+  text-align: left;
+}
+td{
+  padding: 7px 15px;
+  min-width: 150px;
+  
+}
+td:first-of-type{
+  background-color: whitesmoke;
+  font-size: 16px;
+}
+.subscribe{
+  background-color: royalblue;
+  border-color: royalblue;
+  box-shadow: 0px 5px 2px rgba(0,0,201,0.1);
+}
+.un-subscribe{
+  background-color: crimson;
+  border-color: crimson;
+  box-shadow: 0px 3px 5px rgba(200,0,0,0.1);
+}
+.subscribe:hover{
+  background-color: navy;
+}
+.un-subscribe:hover{
+  background-color: darkred;
+}
+.processing{
+  background-color: whitesmoke;
+  font-size: 12px;
+  cursor: progress !important;
+}
+.processing.subscribe{
+  background-color: navy;
+}
+.processing.un-subscribe{
+  background-color: darkred;
+}
+.repo-fullname{
+  padding: 5px;
+  margin: 0px;
+  display: inline-block;
+  color: grey;
+  font-size: 13px;
+}
+.link-repo-name{
+  color: black;
+  text-decoration: none;
+}
+.link-repo-name:hover{
+  color: royalblue;
+}
+.skeleton td{
+  background-color: lightgray;
+  padding: 20px;
+  background-image:
+			linear-gradient( lightgray 20px, transparent 0 ),
+			linear-gradient( 100deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.5) 50%, rgba(255, 255, 255, 0) 80% ),
+
+			linear-gradient( lightgray 20px, transparent 0 );
+
+		background-repeat: repeat-y;
+
+		background-size:
+			100px 200px, /* circle */
+			50px 200px, /* highlight */
+			150px 200px,
+			350px 200px,
+			300px 200px,
+			250px 200px;
+
+		background-position:
+			0 0, /* circle */
+			0 0, /* highlight */
+			120px 0,
+			120px 40px,
+			120px 80px,
+			120px 120px;
+
+		animation: shine 1s infinite;
+	}
+
+	@keyframes shine {
+		to {
+			background-position:
+				0 0,
+				100% 0, /* move highlight to right */
+				120px 0,
+				120px 40px,
+				120px 80px,
+				120px 120px;
+		}
+	}
+.error{
+  margin: 5px;
+  padding: 10px;
+  background-color: rgba(200,0,0,0.8);
+  color: white;
+  line-height: 1.5;
+  position: relative;
+  padding-bottom: 15px;
+}
+.errclose{
+  display: inline-block;
+  color: black;
+  padding: 2px 7px 1px;
+  text-align: center;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background-color: white;
+  font-size: 12px;
+}
+.errclose:hover{
+  cursor: pointer;
+  background-color: red;
+  color: white;
+}
+.errtime{
+  font-size: 12px;
+  margin-right: 5px;
+  margin-top: 5px;
+  position: absolute;
+  right: 0px;
+  bottom: 0px;
+}
+pre{
+  margin: 0px;
 }
