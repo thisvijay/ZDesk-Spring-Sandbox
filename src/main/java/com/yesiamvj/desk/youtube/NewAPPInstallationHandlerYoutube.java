@@ -17,9 +17,9 @@ import com.yesiamvj.desk.ResponseUtility;
 
 @RestController
 @EnableAutoConfiguration
-public class NewAPPInstallationHandler {
+public class NewAPPInstallationHandlerYoutube {
 	
-	private static final Logger LOGGER = LoggerFactory.getLogger(NewAPPInstallationHandler.class);
+	private static final Logger LOGGER = LoggerFactory.getLogger(NewAPPInstallationHandlerYoutube.class);
 
     @RequestMapping(value = "/github/initializeIntegration", method= RequestMethod.POST)
     public ResponseEntity<String>  process(@RequestBody String payload) {
