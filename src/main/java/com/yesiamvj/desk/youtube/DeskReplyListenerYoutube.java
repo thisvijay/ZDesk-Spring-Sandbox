@@ -20,9 +20,9 @@ import com.yesiamvj.desk.ResponseUtility;
 
 @RestController
 @EnableAutoConfiguration
-public class DeskReplyListener {
+public class DeskReplyListenerYoutube {
 	
-	private static final Logger LOGGER = LoggerFactory.getLogger(DeskReplyListener.class);
+	private static final Logger LOGGER = LoggerFactory.getLogger(DeskReplyListenerYoutube.class);
 
     @RequestMapping(value = "/youtube/deskReplyListener", method= RequestMethod.POST)
     public ResponseEntity<String>  process(
