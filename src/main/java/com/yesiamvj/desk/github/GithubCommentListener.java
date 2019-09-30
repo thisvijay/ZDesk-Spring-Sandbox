@@ -57,6 +57,11 @@ public class GithubCommentListener {
         if(githubPayload.has("issue")){
             JSONObject ticket = convertGitHubIssueAsDeskTicket(githubPayload);
             tickets.put(ticket);
+            
+            if(githubPayload.getJSONObject("issue").getInt("comments") == 0){
+            	JSONObject descThread = convertGitHubIssueDescriptionAsDeskThread(githubPayload);
+            	threads.put(descThread);
+            }
         }
         
         if(githubPayload.has("comment")){
@@ -114,7 +119,7 @@ public class GithubCommentListener {
     	JSONObject deskTicketJSON = new JSONObject();
     	deskTicketJSON.put("extId", repo_name+":-:"+issueNumber+":-:"+repo_owner);
     	deskTicketJSON.put("subject", repo_name+" - "+"#"+issueNumber+" "+issue.getString("title"));
-    	deskTicketJSON.put("description", issue.getString("body"));
+    	//deskTicketJSON.put("description", issue.getString("body"));
     	deskTicketJSON.put("createdTime", issue.getString("created_at"));
     	deskTicketJSON.put("extra", getIssueExtraMetaJSON(issue));
 
@@ -127,6 +132,37 @@ public class GithubCommentListener {
     	deskTicketJSON.put("actor", actorJSON);
 
     	return deskTicketJSON;
+    }
+    
+    private JSONObject convertGitHubIssueDescriptionAsDeskThread(JSONObject githubPaylodData) throws JSONException {
+
+    	String repo_name = githubPaylodData.getJSONObject("repository").getString("name");
+    	String repo_owner = githubPaylodData.getJSONObject("repository").getJSONObject("owner").getString("login");
+
+    	JSONObject issue = githubPaylodData.getJSONObject("issue");
+    	JSONObject issue_author = issue.getJSONObject("user");
+    	String authorName = issue_author.getString("login"); 
+    	String photoURL = issue_author.getString("avatar_url");
+    	String issueNumber = issue.getString("number");
+    	
+    	JSONObject deskThreadJSON = new JSONObject();
+        deskThreadJSON.put("extId", issue.getString("id"));
+        deskThreadJSON.put("extParentId", repo_name+":-:"+issueNumber+":-:"+repo_owner);
+        deskThreadJSON.put("content", issue.getString("body"));
+        deskThreadJSON.put("contentType", "text/html");
+        deskThreadJSON.put("direction", issue.getString("author_association").equals("NONE") ? "in" : "out");
+        deskThreadJSON.put("from", authorName);
+        deskThreadJSON.put("canReply", true);
+
+    	JSONObject actorJSON = new JSONObject();
+    	actorJSON.put("name", authorName);
+    	actorJSON.put("displayName", authorName+" (Github)");
+    	actorJSON.put("extId", authorName);
+    	actorJSON.put("photoURL", photoURL.split("\\?")[0]);
+
+    	deskThreadJSON.put("actor", actorJSON);
+
+    	return deskThreadJSON;
     }
     
     private JSONObject getCommentExtraMetaJSON(JSONObject githubComment) {
